@@ -1,6 +1,4 @@
-####################################
-# OS / Editor
-####################################
+
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -16,9 +14,7 @@ Icon?
 *.iws
 out/
 
-####################################
-# Env / Secrets
-####################################
+
 .env
 .env.*
 !.env.example
@@ -33,16 +29,12 @@ secrets/
 **/*password*
 **/*token*
 
-####################################
-# Logs
-####################################
+
 logs/
 **/logs/
 *.log
 
-####################################
-# Java / Maven / Gradle
-####################################
+
 target/
 **/target/
 *.class
@@ -60,9 +52,7 @@ buildNumber.properties
 **/build/
 !.mvn/wrapper/maven-wrapper.jar
 
-####################################
-# Spring Boot
-####################################
+
 **/application-local.yml
 **/application-dev.yml
 **/application-prod.yml
@@ -70,26 +60,20 @@ buildNumber.properties
 **/bootstrap-dev.yml
 **/bootstrap-prod.yml
 
-####################################
-# Test / Reports
-####################################
+
 surefire-reports/
 failsafe-reports/
 *.jfr
 hs_err_pid*
 
-####################################
-# Docker
-####################################
+
 **/.docker/
 **/docker-data/
 docker-data/
 **/data/
 **/volumes/
 
-####################################
-# Node (nếu gateway front hoặc tools)
-####################################
+
 node_modules/
 dist/
 build/
@@ -98,8 +82,4 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-####################################
-# Config repo (nếu bạn để chung trong monorepo)
-# Nếu bạn muốn commit config repo thì XÓA dòng này
-####################################
 cinema-config-repo/
