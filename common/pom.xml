@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="
+           http://maven.apache.org/POM/4.0.0
+           https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- OPTIONAL: nếu có parent chung -->
+    <!--
+    <parent>
+        <groupId>com.cinema</groupId>
+        <artifactId>cinema-booking-system</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    -->
+
+    <groupId>com.cinema</groupId>
+    <artifactId>common</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>cinema-common</name>
+    <description>Common shared module for Cinema Booking Microservices</description>
+
+    <properties>
+        <java.version>17</java.version>
+        <lombok.version>1.18.32</lombok.version>
+        <jackson.version>2.18.5</jackson.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- ============================= -->
+        <!-- Lombok -->
+        <!-- ============================= -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- ============================= -->
+        <!-- Jackson (JSON / Time) -->
+        <!-- ============================= -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- ============================= -->
+        <!-- Validation (DTO / Request) -->
+        <!-- ============================= -->
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+
+        <!-- ============================= -->
+        <!-- Spring Web annotations (ONLY annotation) -->
+        <!-- Không kéo Tomcat -->
+        <!-- ============================= -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>6.2.14</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- Java version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <parameters>true</parameters>
+                </configuration>
+            </plugin>
+
+            <!-- Disable spring boot plugin -->
+            <!-- common KHÔNG được chạy -->
+        </plugins>
+    </build>
+
+</project>
