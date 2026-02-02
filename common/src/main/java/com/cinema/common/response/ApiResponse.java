@@ -20,21 +20,12 @@ public class ApiResponse<T> {
     private T data;
     private Instant timestamp;
 
-    public static <T> ApiResponse<T> success(T data) {
+    public static <T> ApiResponse<T> success(T data, String message) {
         return ApiResponse.<T>builder()
                 .status(200)
                 .code("SUCCESS")
-                .message("Success")
-                .data(data)
-                .timestamp(Instant.now())
-                .build();
-    }
-
-    public static ApiResponse<Void> error(int status, String code, String message) {
-        return ApiResponse.<Void>builder()
-                .status(status)
-                .code(code)
                 .message(message)
+                .data(data)
                 .timestamp(Instant.now())
                 .build();
     }
